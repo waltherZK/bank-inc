@@ -1,0 +1,30 @@
+<input
+  #termino
+  type="text"
+  (keyup)="buscar(termino.value)"
+  name="buscar"
+  id="buscar"
+  placeholder="Buscar Producto"
+/>
+<section class="container">
+  <div class="lista-categorias" *ngFor="let categoria of listaCategorias">
+    <p class="nombre-categoria">
+      {{ categoria.name | uppercase }}
+    </p>
+    <span>
+      <img [src]="categoria.image" alt="No Image" />
+    </span>
+  </div>
+</section>
+<section>
+  <div class="lista-productos" *ngFor="let productos of listaProductos">
+    <p class="nombre-categoria">
+      {{ productos.title | uppercase }}
+    </p>
+    <div>
+      <img [src]="productos.images" alt="No Image" />
+      <app-carrito-compras></app-carrito-compras>
+    </div>
+  </div>
+</section>
+<app-productos [data]="producto"></app-productos>

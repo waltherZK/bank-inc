@@ -1,0 +1,6 @@
+<div>
+  <div *ngFor="let datos of data; let i = index">
+    {{ datos.title }}
+    <img [src]="datos.images" alt=" No Image" (click)="verProducto( datos )"/>
+  </div>
+</div>

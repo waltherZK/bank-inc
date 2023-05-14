@@ -1,0 +1,55 @@
+.container {
+    margin: 2rem auto;
+    height: 230px;
+    width: 100%;
+    overflow: auto;
+    box-sizing: border-box;
+    padding: 0 1rem;
+    display: flex;
+    background-color: #1e2020a6;
+}
+
+.nombre-categoria {
+    font-size: medium;
+    color: white;
+    text-align: center;
+}
+
+span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    width: 300px;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+}
+
+.container::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+.container::-webkit-scrollbar:vertical {
+    width:10px;
+}
+
+.container::-webkit-scrollbar-button:increment,.container::-webkit-scrollbar-button {
+    display: none;
+} 
+
+.container::-webkit-scrollbar:horizontal {
+    height: 10px;
+}
+
+.container::-webkit-scrollbar-thumb {
+    background-color: #c7757581;
+    border-radius: 20px;
+    border: 2px solid #f1f2f3;
+}
+
+.container::-webkit-scrollbar-track {
+    border-radius: 10px;  
+}
