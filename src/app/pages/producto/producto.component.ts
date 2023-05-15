@@ -8,8 +8,10 @@ import { Producto } from '../../interface/index';
   styleUrls: ['./producto.component.scss']
 })
 export class ProductoComponent implements OnInit {
-  title!: string;
-  images!: string;
+  titulo!: string;
+  imagen!: string;
+  descripcion!: string;
+  precio!: string;
   constructor(private router: Router) {
     this.receiverParameters();
    }
@@ -22,8 +24,10 @@ export class ProductoComponent implements OnInit {
     if(params == null) return;
     if(params == undefined) return;
     console.log(params);
-    this.title = params['title'];
-    this.images = params['images'];
+    this.titulo = params['title'];
+    this.imagen = params['image'];
+    this.descripcion = params['description'];
+    this.precio = params['price'];
     //this.objetoProducto = params;
     //params.producto = this.objetoProducto;
     // if(params == null) return;
@@ -37,9 +41,5 @@ export class ProductoComponent implements OnInit {
     
   }
 
-  agregarCarrito(){
-    console.log('agregar carrito');
-    
-  }
 
 }

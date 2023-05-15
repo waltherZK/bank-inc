@@ -1,6 +1,13 @@
-<div>
-  <div *ngFor="let datos of data; let i = index">
-    {{ datos.title }}
-    <img [src]="datos.images" alt=" No Image" (click)="verProducto( datos )"/>
+<h1>Productos</h1>
+<div class="tarjetas-container">
+  <div *ngFor="let producto of listaProductos" class="tarjeta">
+    <div class="imagen" (click)="verProducto( producto )">
+      <img [src]="producto.image" alt="Imagen de la tarjeta">
+    </div>
+    <div class="contenido">
+      <h3>{{ producto.title }}</h3>
+      <p> Valor : {{ producto.price }}</p>
+      <app-carrito-compras [id]="producto.id" ></app-carrito-compras>
+    </div>
   </div>
 </div>

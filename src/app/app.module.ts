@@ -9,6 +9,10 @@ import { ProductosComponent } from './pages/productos/productos.component';
 import { ProductoComponent } from './pages/producto/producto.component';
 import { ToArrayPipe } from './pipes/to-array.pipe';
 import { CarritoComprasComponent } from './pages/carrito-compras/carrito-compras.component';
+import { MatButtonModule } from '@angular/material';
+import { MatIconModule } from '@angular/material';
+import { NavbarComponent } from './pages/navbar/navbar.component';
+import { SlideComponent } from './pages/slide/slide.component';
 
 @NgModule({
   declarations: [
@@ -17,14 +21,18 @@ import { CarritoComprasComponent } from './pages/carrito-compras/carrito-compras
     ProductosComponent,
     ProductoComponent,
     ToArrayPipe,
-    CarritoComprasComponent
+    CarritoComprasComponent,
+    NavbarComponent,
+    SlideComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule, HttpClientModule,
-  
+    AppRoutingModule,
+    HttpClientModule,
+    MatButtonModule,
+    MatIconModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

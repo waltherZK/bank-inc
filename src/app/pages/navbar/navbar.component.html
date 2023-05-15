@@ -1,0 +1,15 @@
+<nav>
+  <a routerLink="home"><img class="svg" src="../../../assets/svg/home.svg" alt="No image" /></a>
+  <a  class="dropdown"
+    >Categorias
+  </a>
+  <div class="animation start-home"></div>
+  <input
+    #termino
+    type="text"
+    (keyup)="buscar(termino.value)"
+    name="buscar"
+    id="buscar"
+    placeholder="Buscar Producto"
+  />
+</nav>

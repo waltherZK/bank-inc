@@ -1,15 +1,16 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Producto } from '../../interface/index';
-import { MarketplaceService } from '../../services/marketplace.service';
+import { MarketplaceService } from 'src/app/services/marketplace.service';
 
 @Component({
-  selector: 'app-productos',
-  templateUrl: './productos.component.html',
-  styleUrls: ['./productos.component.scss'],
+  selector: 'app-slide',
+  templateUrl: './slide.component.html',
+  styleUrls: ['./slide.component.scss']
 })
-export class ProductosComponent implements OnInit {
-  listaProductos: any[] = [];  
+export class SlideComponent implements OnInit {
+
+  listaProductos: any[] = [];
+  //@Input() data: Producto[] = [];
   constructor(private marketplaceService: MarketplaceService,private router: Router) {
     this.marketplaceService.listaProductos().subscribe(
       (productos) => {
@@ -28,10 +29,4 @@ export class ProductosComponent implements OnInit {
   }
 
   ngOnInit(): void {}
-
-  verProducto(producto: any) {
-    console.log(producto);
-    
-    this.router.navigate(['producto'], { state: producto });
-  }
 }

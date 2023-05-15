@@ -1,0 +1,11 @@
+<!-- <div>
+  <div *ngFor="let productos of listaProductos">    
+    <img [src]="productos.image" alt=" No Image" />
+  </div>
+</div> -->
+<div class="slideshow">
+    <div  *ngFor="let productos of listaProductos" class="slide">
+      <img  [src]="productos.image" alt="No image"/>
+    </div>
+  </div>
+  
