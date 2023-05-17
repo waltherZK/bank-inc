@@ -9,8 +9,6 @@ export class ToArrayPipe implements PipeTransform {
     if (!value){
       return;
     }
-    console.log(value);
-    console.log(Object.entries(value));
     
     return Object.entries(value);
   }

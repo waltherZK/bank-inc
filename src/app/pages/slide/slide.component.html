@@ -1,11 +1,25 @@
-<!-- <div>
-  <div *ngFor="let productos of listaProductos">    
-    <img [src]="productos.image" alt=" No Image" />
+<div>
+  <div class="carousel">
+    <ul class="slides">
+      <section  *ngFor="let productos of listaProductos; let i = index">
+        <input type="radio" name="radio-buttons" id="img-{{i}}" checked />
+        <li class="slide-container">
+          <div class="slide-image">
+            <img [src]="productos.images">
+          </div>
+          <div class="carousel-controls">
+            <label for="img-{{i-1}}" class="prev-slide">
+              <span>&lsaquo;</span>
+            </label>
+            <label for="img-{{i+1}}" class="next-slide">
+              <span>&rsaquo;</span>
+            </label>
+          </div>
+        </li>
+      </section>
+      <div class="carousel-dots">
+        <label  *ngFor="let productos of listaProductos; let i = index"for="img-{{i}}" class="carousel-dot" id="img-dot-{{i}}"></label>
+      </div>
+    </ul>
   </div>
-</div> -->
-<div class="slideshow">
-    <div  *ngFor="let productos of listaProductos" class="slide">
-      <img  [src]="productos.image" alt="No image"/>
-    </div>
-  </div>
-  
+</div>

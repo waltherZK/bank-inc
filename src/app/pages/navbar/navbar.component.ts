@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { MarketplaceService } from '../../services/marketplace.service';
+import { Router } from '@angular/router';
+import { Producto, Category } from '../../interface/index';
 
 @Component({
   selector: 'app-navbar',
@@ -7,18 +9,41 @@ import { MarketplaceService } from '../../services/marketplace.service';
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent implements OnInit {
-  producto: any[] = [];
-  constructor(private marketplaceService: MarketplaceService) {}
+  producto: Producto[] = [];
+  listaCategorias: Category[] = [];
+  @Output() newItemEvent = new EventEmitter<any>();
+  constructor(
+    private marketplaceService: MarketplaceService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {}
 
   buscar(termino: string) {
-    this.marketplaceService.obtenerProducto(termino).subscribe(
-      (data: any) => {
-        this.producto = data;
-        console.log(this.producto);
+    if (termino.length >= 3) {
+      this.marketplaceService.obtenerProducto(termino).subscribe(
+        (data: Producto[]) => {
+          this.producto = data;
+          this.newItemEvent.emit(this.producto);
+        },
+        (errorServicio) => {
+          console.log(errorServicio);
+        }
+      );
+    } else {
+      this.newItemEvent.emit((this.producto = []));
+    }
+  }
 
-        //this.loading = false;
+  home() {
+    this.newItemEvent.emit((this.producto = []));
+    this.router.navigate(['home']);
+  }
+
+  categorias() {
+    this.marketplaceService.obtenerCategoria().subscribe(
+      (categoria: any) => {
+        this.listaCategorias = categoria;
       },
       (errorServicio) => {
         console.log(errorServicio);

@@ -1,15 +1,20 @@
 <nav>
-  <a routerLink="home"><img class="svg" src="../../../assets/svg/home.svg" alt="No image" /></a>
-  <a  class="dropdown"
-    >Categorias
+  <a (click)="home()"
+    ><img class="svg" src="../../../assets/svg/home.svg" alt="No image"
+  /></a>
+  <a (click)="categorias()">Categorias
   </a>
   <div class="animation start-home"></div>
   <input
     #termino
-    type="text"
-    (keyup)="buscar(termino.value)"
+    type="search"
     name="buscar"
     id="buscar"
-    placeholder="Buscar Producto"
+    placeholder="Buscar Productos..."
   />
+  <button (click)="buscar(termino.value)" class="btn">Buscar</button>
+  <section>
+    <app-boton-compras></app-boton-compras>
+  </section>
 </nav>
+

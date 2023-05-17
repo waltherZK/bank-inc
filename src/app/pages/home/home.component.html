@@ -1,23 +1,4 @@
-<app-navbar></app-navbar>
+<app-navbar (newItemEvent)="addItem($event)"></app-navbar>
 <app-slide></app-slide>
-<app-productos></app-productos>
-<!-- <section class="container">
-  <div class="lista-categorias" *ngFor="let categoria of listaCategorias">
-    <p class="nombre-categoria">
-    </p>
-    <span>
-      <img [src]="" alt="No Image" />
-    </span>
-  </div>
-</section>
-<section>
-  <div class="lista-productos" >
-    <p class="nombre-categoria">
-    </p>
-    <div>
-      <img  alt="No Image" />
-      <app-carrito-compras></app-carrito-compras>
-    </div>
-  </div>
-</section> -->
+<app-productos [buscarProducto]="buscarProducto"></app-productos>
 

@@ -1,0 +1,16 @@
+<app-navbar></app-navbar>
+<p>Compras</p>
+<button (click)="crearArchivo()">Exportar</button>
+<table class="styled-table">
+    <thead>
+        <tr>
+          <th>title</th>
+          <th>cantidad</th>
+        </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of datosLocalStorage">
+        <td>{{item.title}}</td>
+        <td>{{item.cantidad}}</td>        
+  </tbody>
+</table>

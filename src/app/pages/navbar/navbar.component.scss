@@ -57,3 +57,46 @@ a:nth-child(2):hover~.animation {
 	height: 25px;
 	width: 25px;
 }
+
+section{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+}
+
+input{
+	border-radius: 8px;
+	height: 55%;
+	margin: 15px;
+	text-align: center;
+}
+
+
+.btn {
+	position: relative;
+	display: inline-block;
+	margin: 0;
+	padding: 0.3rem 0.3rem;
+	background: #e74c3c;
+	text-transform: uppercase;
+	font-size: 15px;
+	line-height: normal;
+	border: 0;
+	border-radius: 0.4rem;
+	box-shadow: -1px 1px 8px rgba(0, 0, 0, 0.4);
+	cursor: pointer;
+	
+	&:hover {
+	  background: #0977df;
+	  box-shadow: -2px 2px 16px rgba(0, 0, 0, 0.6);
+	}
+	
+	&:active,
+	&:focus {
+	  outline: none;
+	}
+	
+	&:active {
+	  box-shadow: -4px 4px 24px rgba(0, 0, 0, 0.8);
+	}
+  }

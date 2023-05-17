@@ -33,12 +33,13 @@ img {
 }
 
 .container::-webkit-scrollbar:vertical {
-    width:10px;
+    width: 10px;
 }
 
-.container::-webkit-scrollbar-button:increment,.container::-webkit-scrollbar-button {
+.container::-webkit-scrollbar-button:increment,
+.container::-webkit-scrollbar-button {
     display: none;
-} 
+}
 
 .container::-webkit-scrollbar:horizontal {
     height: 10px;
@@ -51,5 +52,10 @@ img {
 }
 
 .container::-webkit-scrollbar-track {
-    border-radius: 10px;  
+    border-radius: 10px;
+}
+
+.carousel-container {
+    display: flex;
+    justify-content: center;
 }

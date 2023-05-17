@@ -13,6 +13,10 @@ import { MatButtonModule } from '@angular/material';
 import { MatIconModule } from '@angular/material';
 import { NavbarComponent } from './pages/navbar/navbar.component';
 import { SlideComponent } from './pages/slide/slide.component';
+import { ComprasComponent } from './pages/compras/compras.component';
+import { BotonComprasComponent } from './pages/boton-compras/boton-compras.component';
+
+import * as XLSX from 'xlsx';
 
 @NgModule({
   declarations: [
@@ -24,6 +28,8 @@ import { SlideComponent } from './pages/slide/slide.component';
     CarritoComprasComponent,
     NavbarComponent,
     SlideComponent,
+    ComprasComponent,
+    BotonComprasComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,7 +38,7 @@ import { SlideComponent } from './pages/slide/slide.component';
     MatButtonModule,
     MatIconModule,
   ],
-  providers: [],
+  providers: [{ provide: 'xlsx', useValue: XLSX }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
